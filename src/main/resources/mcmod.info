@@ -1,0 +1,16 @@
+[
+{
+  "modid": "Tools",
+  "name": "Tools",
+  "description": "dragon tools",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["ColdDragon"],
+  "credits": "ColdDragon",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
