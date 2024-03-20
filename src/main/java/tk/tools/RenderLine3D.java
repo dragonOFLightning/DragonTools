@@ -3,7 +3,6 @@ package tk.tools;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderManager;
-import net.minecraft.util.BlockPos;
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.OpenGLException;
 
@@ -49,7 +48,7 @@ public class RenderLine3D {
             GlStateManager.color(red, green, blue, alpha);
             GL11.glLineWidth(2);
 
-            // 计算相对位置
+            // 根据条件来是否计算相对位置
             final double[] pos1 = global ? getRelativePosition(x1, y1, z1) : new double[]{x1, y1, z1};
             x1 = pos1[0];
             y1 = pos1[1];
@@ -79,18 +78,9 @@ public class RenderLine3D {
         return "Success";
     }
 
-    // 重载 完整传递参数但是坐标用BlockPos类型
-    final public String renderLine3D(BlockPos pos1, BlockPos pos2, Color color, boolean global) {
-        return renderLine3D(pos1.getX(), pos1.getY(), pos1.getZ(), pos2.getX(), pos2.getY(), pos2.getZ(), color, global);
-    }
-
     // 重载 仅需传递坐标
     final public String renderLine3D(double x1, double y1, double z1, double x2, double y2, double z2) {
         return renderLine3D(x1, y1, z1, x2, y2, z2, Color.GREEN, true);
-    }
-
-    final public String renderLine3D(BlockPos pos1, BlockPos pos2) {
-        return renderLine3D(pos1, pos2, Color.GREEN, true);
     }
 
     // 重载 需要传递颜色
@@ -98,16 +88,8 @@ public class RenderLine3D {
         return renderLine3D(x1, y1, z1, x2, y2, z2, color, true);
     }
 
-    final public String renderLine3D(BlockPos pos1, BlockPos pos2, Color color) {
-        return renderLine3D(pos1, pos2, color, true);
-    }
-
     // 重载 需要传递是否全局
     final public String renderLine3D(double x1, double y1, double z1, double x2, double y2, double z2, boolean global) {
         return renderLine3D(x1, y1, z1, x2, y2, z2, Color.GREEN, global);
-    }
-
-    final public String renderLine3D(BlockPos pos1, BlockPos pos2, boolean global) {
-        return renderLine3D(pos1, pos2, Color.GREEN, global);
     }
 }
