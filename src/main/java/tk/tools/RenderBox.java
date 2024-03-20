@@ -100,15 +100,16 @@ public class RenderBox {
 
         // 计算相对位置
         final RenderManager renderManager = RenderBox.mc.getRenderManager();
-        final double playerViewX = renderManager.viewerPosX;
-        final double playerViewY = renderManager.viewerPosY;
-        final double playerViewZ = renderManager.viewerPosZ;
-        maxX = maxX - playerViewX;
-        maxY = maxY - playerViewY;
-        maxZ = maxZ - playerViewZ;
-        minX = minX - playerViewX;
-        minY = minY - playerViewY;
-        minZ = minZ - playerViewZ;
+        final double viewerPosX = renderManager.viewerPosX;
+        final double viewerPosY = renderManager.viewerPosY;
+        final double viewerPosZ = renderManager.viewerPosZ;
+        maxX = maxX - viewerPosX;
+        maxY = maxY - viewerPosY;
+        maxZ = maxZ - viewerPosZ;
+        minX = minX - viewerPosX;
+        minY = minY - viewerPosY;
+        minZ = minZ - viewerPosZ;
+        
         return renderBox(maxX, maxY, maxZ, minX, minY, minZ, color);
     }
 
