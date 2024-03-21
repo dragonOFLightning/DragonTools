@@ -23,7 +23,7 @@ public class RenderTracerLine {
         GL11.glPopMatrix();
     }
 
-    final public String renderTracerLine(final double x, final double y, final double z, Color color){
+    static public String renderTracerLine(final double x, final double y, final double z, Color color){
         final EntityPlayer player = RenderTracerLine.mc.thePlayer;
 
         // 强制关闭视角摇晃
@@ -68,12 +68,12 @@ public class RenderTracerLine {
         return "Success";
     }
 
-    final public String renderTracerLine(double x,double y,double z){
+    static public String renderTracerLine(double x,double y,double z){
         return renderTracerLine(x,y,z,Color.GREEN);
     }
 
     // 重载 - 通过实体传递参数
-    final public String renderTracerLine(final Entity entity, Color color){
+    static public String renderTracerLine(final Entity entity, Color color){
         final AxisAlignedBB box = entity.getEntityBoundingBox();
 
         // 计算中点
@@ -87,7 +87,7 @@ public class RenderTracerLine {
         return renderTracerLine(centerX,box.minY,centerZ,color);
     }
 
-    final public String renderTracerLine(Entity entity){
+    static public String renderTracerLine(Entity entity){
         return renderTracerLine(entity,Color.RED);
     }
 }

@@ -28,7 +28,7 @@ public class RenderBox {
         GL11.glVertex3d(x2, y2, z2);
     }
 
-    public String renderBox(final double maxX, final double maxY, final double maxZ, final double minX, final double minY, final double minZ, final Color color) {
+    static public String renderBox(final double maxX, final double maxY, final double maxZ, final double minX, final double minY, final double minZ, final Color color) {
         try {
             // 保存GL状态
             GL11.glPushMatrix();
@@ -74,16 +74,16 @@ public class RenderBox {
         return "Success";
     }
 
-    public String renderBox(double maxX, double maxY, double maxZ, double minX, double minY, double minZ) {
+    static public String renderBox(double maxX, double maxY, double maxZ, double minX, double minY, double minZ) {
         return renderBox(maxX, maxY, maxZ, minX, minY, minZ, Color.GREEN);
     }
 
     // 重载 通过AxisAlignedBB传递参数
-    public String renderBox(AxisAlignedBB box, Color color) {
+    static public String renderBox(AxisAlignedBB box, Color color) {
         return renderBox(box.maxX, box.maxY, box.maxZ, box.minX, box.minY, box.minZ, color);
     }
 
-    public String renderBox(AxisAlignedBB box) {
+    static public String renderBox(AxisAlignedBB box) {
         return renderBox(box.maxX, box.maxY, box.maxZ, box.minX, box.minY, box.minZ, Color.GREEN);
     }
 
@@ -109,7 +109,7 @@ public class RenderBox {
         minX = minX - viewerPosX;
         minY = minY - viewerPosY;
         minZ = minZ - viewerPosZ;
-        
+
         return renderBox(maxX, maxY, maxZ, minX, minY, minZ, color);
     }
 

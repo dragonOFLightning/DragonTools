@@ -28,7 +28,7 @@ public class RenderLine3D {
         return new double[]{relativeX, relativeY, relativeZ};
     }
 
-    final public String renderLine3D(double x1, double y1, double z1, double x2, double y2, double z2, final Color color, final boolean global) {
+    static public String renderLine3D(double x1, double y1, double z1, double x2, double y2, double z2, final Color color, final boolean global) {
         try {
             // 保存GL状态
             GL11.glPushMatrix();
@@ -79,17 +79,17 @@ public class RenderLine3D {
     }
 
     // 重载 仅需传递坐标
-    final public String renderLine3D(double x1, double y1, double z1, double x2, double y2, double z2) {
+    static public String renderLine3D(double x1, double y1, double z1, double x2, double y2, double z2) {
         return renderLine3D(x1, y1, z1, x2, y2, z2, Color.GREEN, true);
     }
 
     // 重载 需要传递颜色
-    final public String renderLine3D(double x1, double y1, double z1, double x2, double y2, double z2, Color color) {
+    static public String renderLine3D(double x1, double y1, double z1, double x2, double y2, double z2, Color color) {
         return renderLine3D(x1, y1, z1, x2, y2, z2, color, true);
     }
 
     // 重载 需要传递是否全局
-    final public String renderLine3D(double x1, double y1, double z1, double x2, double y2, double z2, boolean global) {
+    static public String renderLine3D(double x1, double y1, double z1, double x2, double y2, double z2, boolean global) {
         return renderLine3D(x1, y1, z1, x2, y2, z2, Color.GREEN, global);
     }
 }
