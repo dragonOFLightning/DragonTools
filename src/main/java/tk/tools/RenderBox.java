@@ -88,7 +88,7 @@ public class RenderBox {
     }
 
     // 渲染实体
-    public String renderEntity(final Entity entity, Color color) {
+    static public String renderEntity(final Entity entity, Color color) {
         // 读取实体坐标
         final AxisAlignedBB box = entity.getEntityBoundingBox();
         double maxX = box.maxX;
@@ -113,7 +113,7 @@ public class RenderBox {
         return renderBox(maxX, maxY, maxZ, minX, minY, minZ, color);
     }
 
-    public String renderEntity(Entity entity) {
+    static public String renderEntity(Entity entity) {
         return renderEntity(entity, Color.GREEN);
     }
 }
