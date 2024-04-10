@@ -48,13 +48,13 @@ public class RenderBox {
             GlStateManager.color(red, green, blue, alpha);
             GL11.glLineWidth(2);
 
-            // 渲染上方矩形
+            // 渲染下方矩形
             renderLine(minX, minY, minZ, maxX, minY, minZ);
             renderLine(maxX, minY, minZ, maxX, minY, maxZ);
             renderLine(maxX, minY, maxZ, minX, minY, maxZ);
             renderLine(minX, minY, maxZ, minX, minY, minZ);
 
-            // 渲染下方矩形
+            // 渲染上方矩形
             renderLine(minX, maxY, minZ, maxX, maxY, minZ);
             renderLine(maxX, maxY, minZ, maxX, maxY, maxZ);
             renderLine(maxX, maxY, maxZ, minX, maxY, maxZ);
