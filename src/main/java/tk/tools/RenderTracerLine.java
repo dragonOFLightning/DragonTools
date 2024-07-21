@@ -14,7 +14,7 @@ import java.awt.Color;
 public class RenderTracerLine {
     private static final Minecraft mc = Minecraft.getMinecraft();
 
-    private static void resetGL(){
+    private static void resetGL() {
         GL11.glDisable(GL11.GL_BLEND);
         GL11.glEnable(GL11.GL_TEXTURE_2D);
         GL11.glEnable(GL11.GL_DEPTH_TEST);
@@ -23,12 +23,12 @@ public class RenderTracerLine {
         GL11.glPopMatrix();
     }
 
-    static public String renderTracerLine(final double x, final double y, final double z, Color color){
+    static public String renderTracerLine(final double x, final double y, final double z, Color color) {
         final EntityPlayer player = RenderTracerLine.mc.thePlayer;
 
         // 强制关闭视角摇晃
         final GameSettings gameSettings = mc.gameSettings;
-        if(gameSettings.viewBobbing){
+        if (gameSettings.viewBobbing) {
             gameSettings.viewBobbing = false;
         }
 
@@ -58,9 +58,9 @@ public class RenderTracerLine {
 
             // 渲染
             GL11.glVertex3d(0, player.getEyeHeight(), 0);
-            GL11.glVertex3d(renderX,renderY,renderZ);
+            GL11.glVertex3d(renderX, renderY, renderZ);
             GL11.glEnd();
-        }catch (Error error){
+        } catch (Error error) {
             resetGL();
             return error.getMessage();
         }
@@ -68,26 +68,26 @@ public class RenderTracerLine {
         return "Success";
     }
 
-    static public String renderTracerLine(double x,double y,double z){
-        return renderTracerLine(x,y,z,Color.GREEN);
+    static public String renderTracerLine(double x, double y, double z) {
+        return renderTracerLine(x, y, z, Color.GREEN);
     }
 
     // 重载 - 通过实体传递参数
-    static public String renderTracerLine(final Entity entity, Color color){
+    static public String renderTracerLine(final Entity entity, Color color) {
         final AxisAlignedBB box = entity.getEntityBoundingBox();
 
         // 计算中点
         final double maxX = box.maxX;
         final double minX = box.minX;
-        final double centerX = (maxX + minX) /2;
+        final double centerX = (maxX + minX) / 2;
         final double maxZ = box.maxZ;
         final double minZ = box.minZ;
-        final double centerZ = (maxZ + minZ) /2;
+        final double centerZ = (maxZ + minZ) / 2;
 
-        return renderTracerLine(centerX,box.minY,centerZ,color);
+        return renderTracerLine(centerX, box.minY, centerZ, color);
     }
 
-    static public String renderTracerLine(Entity entity){
-        return renderTracerLine(entity,Color.RED);
+    static public String renderTracerLine(Entity entity) {
+        return renderTracerLine(entity, Color.RED);
     }
 }

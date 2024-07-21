@@ -58,9 +58,9 @@ public class Tools {
     }
 
     // 获取随机字符串
-    static public String getRandomString(int length){
+    static public String getRandomString(int length) {
         StringBuilder stringBuffer = new StringBuilder();
-        for(int i = 0;i<length;i++){
+        for (int i = 0; i < length; i++) {
             stringBuffer.append(getRandomChar());
         }
         return stringBuffer.toString();
@@ -69,7 +69,8 @@ public class Tools {
     // 获取随机字符
     static final private String randomList = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
     static final private Random random = new Random();
-    static public char getRandomChar(){
+
+    static public char getRandomChar() {
         final int randomIndex = random.nextInt(randomList.length());
         return randomList.charAt(randomIndex);
     }
