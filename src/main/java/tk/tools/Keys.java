@@ -6,8 +6,8 @@ public class Keys {
     private Keys() {
     }
 
-    static final private String[] charKeyName = {"Tab", "[", "]", ";", "\"", "<", ">", "/"};
-    static final private Integer[] charKeyValue = {15, 26, 27, 39, 40, 51, 52, 53};
+    static final private String[] charKeyName = {"Tab", "[", "]", ";", "\"", "<", ">", "/", "=", "-", "\\"};
+    static final private Integer[] charKeyValue = {15, 26, 27, 39, 40, 51, 52, 53, 13, 12, 43};
 
     static final private String[] line1KeyName = {"Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P"};
     static final private Integer[] line1KeyValue = {16, 17, 18, 19, 20, 21, 22, 23, 24, 25};
