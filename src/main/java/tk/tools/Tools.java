@@ -74,4 +74,13 @@ public class Tools {
         final int randomIndex = random.nextInt(randomList.length());
         return randomList.charAt(randomIndex);
     }
+
+    // 获取数组对应的索引
+    static public <T> int findIndex(final T[] array, final T target) {
+        for (int index = 0; index < array.length; index++) {
+            final T item = array[index];
+            if (item == target) return index;
+        }
+        return -1;
+    }
 }
