@@ -26,7 +26,7 @@ public class RenderEntityEye {
         GL11.glVertex3d(x2, y2, z2);
     }
 
-    static public String renderEyeLine(final EntityLivingBase entity, final Color color){
+    static public String renderEyeLine(final EntityLivingBase entity, final Color color) {
         try {
             // 保存GL状态
             GL11.glPushMatrix();
@@ -63,15 +63,15 @@ public class RenderEntityEye {
             renderLine(maxX, y, maxZ, minX, y, maxZ);
             renderLine(minX, y, maxZ, minX, y, minZ);
             GL11.glEnd();
-        } catch (Exception error){
+        } catch (Exception error) {
             resetGL();
             return error.getMessage();
         }
         resetGL();
-        return  "Success";
+        return "Success";
     }
 
-    static public String renderEyeLine(EntityLivingBase entity){
-        return renderEyeLine(entity,Color.RED);
+    static public String renderEyeLine(EntityLivingBase entity) {
+        return renderEyeLine(entity, Color.RED);
     }
 }
