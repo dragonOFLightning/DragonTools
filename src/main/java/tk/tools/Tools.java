@@ -10,7 +10,7 @@ import java.util.Random;
 @Mod(modid = Tools.name, version = Tools.version, dependencies = Tools.author)
 public class Tools {
     final static String name = "Tools";
-    final static String version = "0.0.1";
+    final static String version = "1.1.0";
     final static String author = "ColdDragon";
 
     final public static Minecraft mc = Minecraft.getMinecraft();
