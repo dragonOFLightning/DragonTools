@@ -1,5 +1,6 @@
 package tk.tools;
 
+import net.minecraft.client.Minecraft;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraftforge.fml.common.Mod;
 
@@ -11,6 +12,8 @@ public class Tools {
     final static String name = "Tools";
     final static String version = "0.0.1";
     final static String author = "ColdDragon";
+
+    final public static Minecraft mc = Minecraft.getMinecraft();
 
     // 欧式距离计算
     static public int getEuclDistanceSQ(final int x1, final int y1, final int z1, final int x2, final int y2, final int z2) {
